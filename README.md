@@ -1,4 +1,4 @@
-# DevOps Society + Elastic London Hack Night
+# DevOps Society x Elastic London Hack Night
 
 Prerequisites and Instructions for 18th June Hack Night
 
@@ -8,8 +8,9 @@ Prerequisites and Instructions for 18th June Hack Night
 
 1. Your laptop!
 2. The following software installed on your laptop:
-  2.1. [Docker](https://docs.docker.com/get-started/get-docker/)
-  2.2 [Docker Compose](https://docs.docker.com/compose/install/)
+* [Docker](https://docs.docker.com/get-started/get-docker/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+* [Claude Code](https://code.claude.com/docs/en/desktop)
 
 ## Setup
 
