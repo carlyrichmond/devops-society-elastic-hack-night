@@ -11,6 +11,7 @@ Prerequisites and Instructions for 18th June Hack Night
 * [Docker](https://docs.docker.com/get-started/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 * [Claude Code](https://code.claude.com/docs/en/desktop)
+* `kubectl` and `minikube` as per the [Kubernetes install tools guide](https://kubernetes.io/docs/tasks/tools/)
 
 ## Objective
 This is an open challenge to setup your own agents and MCP tools and apps to find and fix issues within a complex application ecosystem. Prizes will be awarded for the most novel 
@@ -50,9 +51,9 @@ processors:
 4. Start the demo application:
 
 ```
-./demo.sh docker
+cd opentelemetry-demo
+minikube start
 
-# Alt with Kubernetes
 ./demo.sh k8s
 ```
 
@@ -75,16 +76,24 @@ service:
 ### Elastic Observability
 
 1. See the [APM guide](https://www.elastic.co/docs/solutions/observability/apm) for details of available screens
-2. Browse the Discover, Service Inventory and Traces screens to see the available data
+2. Browse the Discover, Service Inventory and Traces screens to see the available data. See if you can find:
+2.1. An error message for a given `service.name` within the Discover screen
+2.2. A example trace passing through the `frontend-proxy` component
+2.3. The number of running pods, via one of the pre-loaded Kubernetes dashboards
 
 ### Elastic Agent Builder
 
 1. Follow the [getting started](https://www.elastic.co/docs/solutions/observability/get-started#create-an-obs-serverless-project) and chat with your telemetry data using the default agent
 2. Create your own agent using [these instructions](https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/custom-agents)
+3. Ask your agent questions about your data, trying to find out:
+3.1. The number of running pods
+3.2. How many errors have you encountered over the last 15 minutes
+3.3. Build your own dashboards using natural language prompts
+3.4. Information about service dependencies
 
 ### Elastic Observability MCP App
 
-*Note: you will need a local Claude Code installation*
+*Note: you will need Claude Code installed*
 
 1. Download the MCP App [as per these instructions](https://github.com/elastic/example-mcp-app-observability#quick-start), and open the binary file
 2. Add the cluster Elasticsearch endpoint and Elasticsearch and Kibana API keys to the MCP app settings, similar to the below screenshot:
@@ -94,6 +103,13 @@ service:
 3. Configure permissions for the respective tools
 4. Try out the tools to see what information you can find, such as the observe tool
 
+### What's next?
 
-*(Note that the tool `k8s-blast-radius` requires a Kubernetes setup rather than vanilla Docker)*
+See if you can add the following to your setup:
+
+1. Create your own alerts using the Elastic MCP Observability App or Kibana
+2. Custom MCP servers to manage code changes (hint: try importing tools from the GitHub MCP server to your agent)
+3. Configure anomaly detection jobs to find spikes in your data volumes (hint: see [this getting started tutorial](https://www.elastic.co/docs/explore-analyze/machine-learning/anomaly-detection/ml-getting-started))
+4. Structure your logs and metrics using [Wired Streams]
+5. Anything else you can think of (wild ideas are encouraged)
 
