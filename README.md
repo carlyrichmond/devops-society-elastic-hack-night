@@ -54,7 +54,11 @@ processors:
 cd opentelemetry-demo
 minikube start
 
+# Start demo
 ./demo.sh k8s
+
+# Proxy forwarding
+kubectl --namespace default port-forward svc/frontend-proxy 8080:8080
 ```
 
 Adding processor to logs pipeline:
