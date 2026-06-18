@@ -11,7 +11,7 @@ Prerequisites and Instructions for 18th June Hack Night
 * [Docker](https://docs.docker.com/get-started/get-docker/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 * [Claude Code](https://code.claude.com/docs/en/desktop)
-* `kubectl` and `minikube` as per the [Kubernetes install tools guide](https://kubernetes.io/docs/tasks/tools/)
+* `kubectl` `helm` and `minikube` as per the [Kubernetes install tools guide](https://kubernetes.io/docs/tasks/tools/)
 
 ## Objective
 This is an open challenge to setup your own agents and MCP tools and apps to find and fix issues within a complex application ecosystem. Prizes will be awarded for the most novel 
